@@ -19,7 +19,7 @@ def get_gemini_response(contents):
         thinking_config=types.ThinkingConfig(thinking_budget=-1),
         tools=tools,
         temperature=0.7,
-        top_p=0.9,
+        top_p=0.3,  # Updated Top P value for demonstration
         top_k=40
     )
     response_text = ""
@@ -64,16 +64,13 @@ def get_gemini_response(contents):
 
 
 
-# Chain of Thought Prompting only
-@app.route("/cricket-cot", methods=["POST"])
-def cricket_chain_of_thought():
+
+# Minimal endpoint to demonstrate Top P parameter
+@app.route("/cricket-top-p", methods=["POST"])
+def cricket_top_p():
     data = request.json
     query = data.get("query", "")
-    user_prompt = (
-        "You are a cricket expert. Answer the following question step by step, explaining your reasoning at each stage before giving the final answer.\n"
-        f"Question: {query}\n"
-        "Let's think step by step."
-    )
+    user_prompt = f"Answer this cricket question: {query}"
     contents = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
     ]
