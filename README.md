@@ -1,49 +1,45 @@
-# saimanideep_ragna_s89
-# 🧠 Ragna – Smart Query Bot
 
-Ragna is a smart query bot that answers questions using prompt engineering and RAG.  
-It fetches relevant info from a custom knowledge base and formats responses clearly.  
-With function calling, it handles tasks like showing weather, workouts, or piano notes.  
-I built it to make information access fast, flexible, and easy to use.
+# Cricket Chatbot 🏏
 
----
+Cricket Chatbot is an intelligent assistant designed to answer all your cricket-related questions! Whether you want live scores, player stats, match schedules, or cricket trivia, this bot has you covered. Built with advanced retrieval and natural language understanding, it brings the world of cricket to your fingertips.
+
 
 ## 🚀 Features
-- 🔍 Retrieval-Augmented Generation (RAG) for accurate, context-aware answers
-- 📦 Structured Output in bullet points, tables, or JSON formats
-- ⚙️ Function Calling for dynamic actions like fetching weather or generating routines
-- 💬 Prompt-Driven Intelligence to guide bot behavior and response formatting
+- 🏏 Live cricket scores and match updates
+- 📊 Player and team statistics
+- 📅 Upcoming match schedules
+- 🏆 Cricket trivia and history
+- 🔎 Search for players, teams, and records
+- 💬 Natural language Q&A about cricket
 
----
 
 ## 🛠 Tech Stack
-- Backend: Python / Node.js  
-- RAG: FAISS / Haystack  
-- Function Hooks: OpenAI / LangChain  
-- Data: JSON files / markdown knowledge base
+- Backend: Python / Node.js
+- Data Retrieval: Cricket APIs / Custom Knowledge Base
+- NLP: OpenAI / LangChain
+- Data Storage: JSON / Markdown / API
 
----
 
 ## 📁 How to Run
-1. Clone the repo  
-2. Install dependencies  
-3. Set up your knowledge base  
-4. Run the bot server and start asking questions!
+1. Clone the repository
+2. Install dependencies
+3. Configure your cricket API keys or knowledge base
+4. Start the chatbot server
+5. Ask your cricket questions!
 
----
 
 ## 🧪 Example Queries
-- "What's a hostel-friendly chest workout?"  
-- "Show me Kesariya piano notes in C major"  
-- "Get weather info for Gajuwaka"
+- "Who won the IPL in 2023?"
+- "Show me Virat Kohli's ODI stats"
+- "When is the next India vs Australia match?"
+- "Tell me a fun cricket trivia"
 
----
+
 
 ## 📌 License
 MIT License
 
----
 
 ## ✨ Author
-Built with curiosity, code, and caffeine by saimanideep.
+Built with a passion for cricket and technology by saimanideep.
 
