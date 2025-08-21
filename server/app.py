@@ -62,18 +62,17 @@ def get_gemini_response(contents):
 
 
 
-# Multi Shot Prompting only
-@app.route("/cricket-multi-shot", methods=["POST"])
-def cricket_multi_shot():
+
+# Dynamic Prompting only
+@app.route("/cricket-dynamic", methods=["POST"])
+def cricket_dynamic():
     data = request.json
     query = data.get("query", "")
+    user_name = data.get("user_name", "Cricket Fan")
     user_prompt = (
-        "You are a cricket expert. Here are some examples:\n"
-        "Q: Who won the IPL in 2023?\n"
-        "A: The Chennai Super Kings won the IPL in 2023.\n"
-        "Q: Show me Virat Kohli's ODI stats.\n"
-        "A: Virat Kohli has scored over 12,000 runs in ODIs with an average above 57.\n"
-        f"Now answer this question:\nQ: {query}\nA:"
+        f"Hello {user_name}! You are chatting with CricketBot 🏏.\n"
+        f"Your question: {query}\n"
+        "Please provide a detailed, friendly, and up-to-date answer."
     )
     contents = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
