@@ -19,8 +19,8 @@ def get_gemini_response(contents):
         thinking_config=types.ThinkingConfig(thinking_budget=-1),
         tools=tools,
         temperature=0.7,
-        top_p=0.3,  # Updated Top P value for demonstration
-        top_k=40
+        top_p=0.9,
+        top_k=5  # Updated Top K value for demonstration
     )
     response_text = ""
     try:
@@ -65,9 +65,9 @@ def get_gemini_response(contents):
 
 
 
-# Minimal endpoint to demonstrate Top P parameter
-@app.route("/cricket-top-p", methods=["POST"])
-def cricket_top_p():
+# Minimal endpoint to demonstrate Top K parameter
+@app.route("/cricket-top-k", methods=["POST"])
+def cricket_top_k():
     data = request.json
     query = data.get("query", "")
     user_prompt = f"Answer this cricket question: {query}"
