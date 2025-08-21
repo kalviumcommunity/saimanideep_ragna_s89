@@ -61,15 +61,18 @@ def get_gemini_response(contents):
 
 
 
-# One Shot Prompting only
-@app.route("/cricket-one-shot", methods=["POST"])
-def cricket_one_shot():
+
+# Multi Shot Prompting only
+@app.route("/cricket-multi-shot", methods=["POST"])
+def cricket_multi_shot():
     data = request.json
     query = data.get("query", "")
     user_prompt = (
-        "You are a cricket expert. Here is an example:\n"
+        "You are a cricket expert. Here are some examples:\n"
         "Q: Who won the IPL in 2023?\n"
         "A: The Chennai Super Kings won the IPL in 2023.\n"
+        "Q: Show me Virat Kohli's ODI stats.\n"
+        "A: Virat Kohli has scored over 12,000 runs in ODIs with an average above 57.\n"
         f"Now answer this question:\nQ: {query}\nA:"
     )
     contents = [
