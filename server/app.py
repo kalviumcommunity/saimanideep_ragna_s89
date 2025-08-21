@@ -60,14 +60,17 @@ def get_gemini_response(contents):
 
 
 
-# Zero Shot Prompting only
-@app.route("/cricket-zero-shot", methods=["POST"])
-def cricket_zero_shot():
+
+# One Shot Prompting only
+@app.route("/cricket-one-shot", methods=["POST"])
+def cricket_one_shot():
     data = request.json
     query = data.get("query", "")
     user_prompt = (
-        "You are a cricket expert. Answer the following question as accurately as possible:\n"
-        f"{query}"
+        "You are a cricket expert. Here is an example:\n"
+        "Q: Who won the IPL in 2023?\n"
+        "A: The Chennai Super Kings won the IPL in 2023.\n"
+        f"Now answer this question:\nQ: {query}\nA:"
     )
     contents = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
