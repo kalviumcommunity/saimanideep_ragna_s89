@@ -14,7 +14,7 @@ Cricket Chatbot is an intelligent assistant designed to answer all your cricket-
 
 
 ## 🛠 Tech Stack
-- Backend: 
+- Backend: python
 - Data Retrieval: Cricket APIs / Custom Knowledge Base
 - NLP: OpenAI / LangChain
 - Data Storage: JSON / Markdown / API
