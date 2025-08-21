@@ -59,20 +59,17 @@ def get_gemini_response(contents):
     return response_text, None
 
 
-# System and User Prompt (RTFC framework only)
-@app.route("/cricket-rtfc", methods=["POST"])
-def cricket_rtfc():
+
+# Zero Shot Prompting only
+@app.route("/cricket-zero-shot", methods=["POST"])
+def cricket_zero_shot():
     data = request.json
     query = data.get("query", "")
-    system_prompt = (
-        "Role: You are CricketBot 🏏, a cricket expert assistant.\n"
-        "Task: Answer all cricket-related questions with accuracy and enthusiasm.\n"
-        "Format: Respond in a friendly, clear, and structured way, using bullet points for stats.\n"
-        "Context: You have access to live scores, player stats, match schedules, and cricket history."
+    user_prompt = (
+        "You are a cricket expert. Answer the following question as accurately as possible:\n"
+        f"{query}"
     )
-    user_prompt = f"My question: {query}"
     contents = [
-        types.Content(role="model", parts=[types.Part(text=system_prompt)]),
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
     ]
     response_text, error = get_gemini_response(contents)
